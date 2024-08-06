@@ -5,22 +5,31 @@
             <hr>
             <div class="cart-box cart-item">
                 <div>
-                    <div class="list-box"><span><img src="Images/square.png" width="15px" height="15px" id="img-icon"></span><span>{{item.title|slice:0:50}}...</span></div>
+                    <div class="list-box"><span><img src="Images/square.png" width="15px" height="15px"
+                                id="img-icon"></span><span>{{item.title|slice:0:50}}...</span></div>
                     <img [src]="item.image" alt="item.image" width="100" height="50">
                 </div>
                 <div class="my-text"><span>{{item.description|slice:0:100}}...</span>
-                <h1>$ {{item.price}}</h1>
+                    <h1>$ {{item.price}}</h1>
                 </div>
             </div>
             }
         </div>
         <div class="check-out-list">
-          <div class="my-text-cart">
-            Order Summary<br>
-            @for (item of cartItems; track item.id) {
-            <span class="pt-10">{{item.title}}</span>
-            }
+            <div class="my-text-cart">
+                Order Summary<br>
+                @for (item of cartItems; track item.id) {
+                <div class="flex justify-between">
+                    <span class="pt-2">x{{count}} {{item.title|slice:0:20}}</span>
+                    <span class="pt-2">{{item.price|currency:'USD'}}</span>
+                </div>
+                }
+                <hr style="border-top: 1px solid gray;">
+                <div class="flex justify-between">
+                    <h4>Order total</h4>
+                    <span class="pt-2">{{totalCount|currency:'USD'}}</span>
+                    <button type="button" class="btn btn-primary">Check out</button>
+                 </div>                      
+            </div>
         </div>
     </div>
-</div>
-

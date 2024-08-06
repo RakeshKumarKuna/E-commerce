@@ -1,7 +1,23 @@
-<nav class="flex-col justify-between">
-  <span >Home</span>
-  <span class="text-blue-400"><a routerLink="cart">Cart</a></span>
- </nav>
+<header class="bg-yellow-700 py-4" id="header">
+  <div class="container mx-auto flex justify-between items-center">
+    <div>
+      <h2>Home</h2>
+    </div>
+    <nav class="flex space-x-6">
+      <a href="#" class="text-white hover:underline">Collection</a>
+      <a href="#" class="text-white hover:underline">Shop</a>
+      <a href="#" class="text-white hover:underline">New Arrival</a>
+      <a routerLink="about" class="text-white hover:underline">About</a>
+      <a routerLink="cart" class="text-white hover:underline">Cart</a>
+    </nav>
+    <div class="flex space-x-4">
+      <a href="#" class="text-white hover:underline pt-2">Login</a>
+      <button class=" border-1 border-black text-orange-400 font-bold py-2 px-4 rounded-full hover:bg-orange-500"
+        id="button">Get Started</button>
+    </div>
+  </div>
+
+</header>
 <router-outlet></router-outlet>
 <footer class="h-52 bg-black ">
   <h1 class="text-center text-white text-2xl">Footer</h1>
